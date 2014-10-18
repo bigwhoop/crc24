@@ -9,7 +9,7 @@ before_script:
   - composer install --prefer-source --dev
   
 script:
-  - php codecept run
+  - codecept run
   - phpunit --coverage-clover=coverage.clover
 
 after_script:
