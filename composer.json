@@ -1,0 +1,24 @@
+{
+  "name": "bigwhoop/crc24",
+  "description": "A CRC-24 implementation in PHP.",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Philippe Gerber",
+      "email": "philippe@bigwhoop.ch"
+    }
+  ],
+  "require": {
+    "php": ">=5.5"
+  },
+  "require-dev": {
+    "codeception/codeception": "2.0.7",
+    "codeception/specify": "0.4.1"
+  },
+  "autoload": {  
+    "psr-4": {
+      "Bigwhoop\\Crc24\\": "src/"
+    }
+  }
+}
