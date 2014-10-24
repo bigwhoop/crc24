@@ -25,7 +25,7 @@ class Crc24
         $crc = self::CRC24_INIT;
         $len = strlen($input);
         for ($i = 0; $i < $len; $i++) {
-            $crc ^= self::getUnicodePointOrdinal($input, $i) << 16;
+            $crc ^= (ord($input[$i]) & 255) << 16;
             for ($j = 0; $j < 8; $j++) {
                 $crc <<= 1;
                 if ($crc & 0x1000000) {
@@ -35,21 +35,5 @@ class Crc24
         }
         
         return $crc & self::CRC24_OUTMASK;
-    }
-
-    /**
-     * @param string $string
-     * @param int $index
-     * @return int
-     */
-    private static function getUnicodePointOrdinal($string, $index)
-    {
-        $char = substr($string, $index, 1);
-        $size = strlen($char);        
-        $ordinal = ord($char[0]) & (0xFF >> $size);
-        for ($i = 1; $i < $size; $i++){
-            $ordinal = $ordinal << 6 | (ord($char[$i]) & 127);
-        }
-        return $ordinal;
     }
 }
