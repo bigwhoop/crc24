@@ -23,7 +23,7 @@ class Crc24
     public static function hash($input)
     {       
         $crc = self::CRC24_INIT;
-        $len = mb_strlen($input);
+        $len = strlen($input);
         for ($i = 0; $i < $len; $i++) {
             $crc ^= self::getUnicodePointOrdinal($input, $i) << 16;
             for ($j = 0; $j < 8; $j++) {
@@ -44,8 +44,8 @@ class Crc24
      */
     private static function getUnicodePointOrdinal($string, $index)
     {
-        $char = mb_substr($string, $index, 1, 'utf-8');
-        $size = mb_strlen($char);        
+        $char = substr($string, $index, 1);
+        $size = strlen($char);        
         $ordinal = ord($char[0]) & (0xFF >> $size);
         for ($i = 1; $i < $size; $i++){
             $ordinal = $ordinal << 6 | (ord($char[$i]) & 127);
