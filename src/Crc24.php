@@ -34,7 +34,7 @@ class Crc24
             }
         }
         
-        return sprintf('%x', $crc & self::CRC24_OUTMASK);
+        return $crc & self::CRC24_OUTMASK;
     }
 
     /**
