@@ -8,7 +8,7 @@ A CRC-24 implementation in PHP.
 
 ## Installation
 
-    composer require "bigwhoop/crc24":"~1.0@stable"
+    composer require bigwhoop/crc24
 
 ## Usage
 
