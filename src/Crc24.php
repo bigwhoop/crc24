@@ -1,26 +1,18 @@
 <?php
-/**
- * This file is part of Crc24
- *
- * (c) Philippe Gerber
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+declare(strict_types=1);
+
 namespace Bigwhoop\Crc24;
 
-class Crc24
+final class Crc24
 {
-    const CRC24_INIT = 0xb704ce;
-    const CRC24_POLY = 0x1864cfb;
-    const CRC24_OUTMASK = 0xffffff;
+    private const CRC24_INIT = 0xb704ce;
+    private const CRC24_POLY = 0x1864cfb;
+    private const CRC24_OUTMASK = 0xffffff;
 
     /**
-     * @param string $input
-     * @return int
      * @see https://pretty-rfc.herokuapp.com/RFC2440#an-implementation-of-the-crc-24-in-c
      */
-    public static function hash($input)
+    public static function hash(string $input): int
     {       
         $crc = self::CRC24_INIT;
         $len = strlen($input);

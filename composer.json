@@ -10,15 +10,17 @@
     }
   ],
   "require": {
-    "php": ">=5.5"
+    "php": "^8"
   },
   "require-dev": {
-    "codeception/codeception": "2.0.7",
-    "codeception/specify": "0.4.1"
+    "phpunit/phpunit": "^9.5",
+    "phpstan/phpstan": "^1.2",
+    "phpstan/phpstan-phpunit": "^1.0"
   },
   "autoload": {  
     "psr-4": {
-      "Bigwhoop\\Crc24\\": "src/"
+      "Bigwhoop\\Crc24\\": "src/",
+      "Bigwhoop\\Crc24\\Tests\\": "tests/"
     }
   }
 }
