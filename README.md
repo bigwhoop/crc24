@@ -1,5 +1,7 @@
 # CRC-24
 
+[![CI](https://github.com/bigwhoop/crc24/actions/workflows/ci.yml/badge.svg)](https://github.com/bigwhoop/crc24/actions/workflows/ci.yml)
+
 A CRC-24 implementation in PHP.
 
 ## Installation
