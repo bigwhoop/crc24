@@ -19,6 +19,7 @@ A CRC-24 implementation in PHP.
 
     composer install --dev
     vendor/bin/phpunit
+    vendor/bin/phpstan
     
 ## License
 
